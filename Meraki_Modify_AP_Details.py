@@ -21,6 +21,13 @@ index = 0
 nameAP = input("+ Do you want to change NAMES? [y/n] ")
 tagAP = input("+ Do you want to change TAGS? [y/n] ")
 addressAP = input("+ Do you want to change ADDRESS? [y/n] ")
+markerAP = input("+ Do you want to move the marker on the address? [y/n] ")
+
+if markerAP=='y':
+    markerBOOL = True
+else:
+    if markerAP=='n':
+        markerBOOL = False
 
 now = datetime.now()
 start = now.strftime('%Y-%m-%d_%H-%M-%S')
@@ -50,7 +57,7 @@ for i in xlsx_dict: # i prende il valore della riga da 0 a fine-1 di xlsx_dict
         response = dashboard.devices.updateDevice(
             i["serial"],
             address = i["address"],
-            moveMapMarker = True
+            moveMapMarker = markerBOOL
             )
 
     index=index+1
