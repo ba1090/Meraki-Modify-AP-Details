@@ -9,7 +9,9 @@ import sys
 import time
 from datetime import datetime
 
-API_KEY = 'API_KEY'
+
+API_KEY = input("+ Insert you API Key ")
+# API_KEY = "YOUR API KEY"
 dashboard = meraki.DashboardAPI(API_KEY)
 
 # import excel file with informations
